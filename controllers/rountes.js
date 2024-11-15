@@ -1,6 +1,23 @@
 const express = require("express");
 const router = express.Router();
-const axios = require("axios");
+// const axios = require("axios");
+let apiLink = `https://newsapi.org/v2/everything?q=tesla&from=2024-10-15&sortBy=publishedAt&apiKey=7e298be2b074469685f446919ba4226b`
+
+
+router.get("/", (req, res) => {
+
+  
+  fetch(apiLink)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+    console.log(data);
+    
+    res.render("home", {articles:data.articles});
+
+    });
+});
 
 router.get("/api/news", async (req, res) => {
   try {
