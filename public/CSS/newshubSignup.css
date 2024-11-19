@@ -1,0 +1,157 @@
+
+h1 {
+    font: white;
+    font-size: 30px;
+    text-align: left;
+    margin: 0; /* Remove margin to align with the border */
+    padding: 10px; /* Add padding to align with the border */
+    color: white; /* Make the text color white */
+    background-color: black; /* Add black background */
+    width: calc(100% - 40px); /* Adjust width to fit within the border */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.card {  
+    width: 95%;
+    height: 100%;
+    margin: 20px auto;
+    border: 1px solid black;
+}
+
+common-heading {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    length: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header h1 {
+    font-size: 24px;
+    color: white;             
+    padding: 10px; /* Revert padding to original size */
+    width: auto; /* Revert width to auto */
+    display: inline-block; /* Ensure the box is only as wide as its content */
+}
+form {
+    padding: 20px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    /* align-items: initial; */
+    align-items: left;
+}
+
+#usernameLabel,
+#passwordLabel, #emailLabel {
+    margin-top: 20px;
+    margin-right: auto;
+    justify-content: left;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 20px;
+    color: black;
+}
+
+.pUsernamelabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 18px;
+}
+.pEmaillabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 18px;
+}
+
+.pPasswordlabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 18px;
+}
+
+form input[type="text"],
+form input[type="password"], form input[type="email"] {
+    padding: 10px; /* Reduce padding to adjust height */
+    margin-bottom: 10px;
+    width: 100%; /* Revert to 30% width */
+    margin-bottom: 10px; /* Reduce margin to make text boxes closer */
+    margin-top: 20px; /* Reduce margin to make text boxes closer */
+    border: 1px solid black;
+    border-radius: 4px;
+    display: left; /* Ensure the input fields are displayed inline */
+   /*  margin-left: 20px; */  /* Set margin for the input fields */
+   /*  padding-left: 20px; */  /* Provide 20px distance between the border and text */
+}
+
+form input[type="submit"] {
+    padding: 18px;
+  /*  width: 95%; */ /* Match the width of the username and password input fields */
+    height: 80px; /* Add height to the buttons */
+    background-color: black; /* Change button background to black */
+    color: white; /* Change button text to white */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px; /* Set margin for the buttons */
+    margin-bottom: 20px;
+  /*  margin-left: 20px; */  /* Set margin for the buttons to align with input fields */
+}
+
+#submitBtn[type="submit"]:hover {
+    background-color: black; 
+    /* Darken the button background on hover */
+}
+
+#submitBtn[type="submit"]:active {
+    background-color: black; 
+    /* Darken the button background when clicked */
+}
+
+.login-button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 2px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 30px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+     width: 100%;
+  }
+  
+  .login-button-submit {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 2px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 1px;
+    cursor: pointer;
+   /*  width: 95%; */
+  }
+  
+  .login-button:hover {
+    background-color: #45a049;
+  }
+  
+  .highlighted-text {
+    background-color: white;
+    border: 2px solid blue;
+    padding: 10px;
+    display: inline-block;
+  }
+   

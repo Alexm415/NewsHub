@@ -1,0 +1,19 @@
+
+<section class="card" id="login-form-section">
+    <h2 class="common-heading">Log In</h2>
+    <form class="pUsername" id="loginForm">  <!-- Form: Block level elements , a parent-->
+        <div class="usernameLabel">
+            <label id="usernameLabel" for="username">Username</label> <!-- div: Inline level elements -->
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="pPasswordLabel">
+            <label id="passwordLabel" for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="login-button">  
+            <button id="submitBtn" class="login-button-submit" type="submit">Log In</button> <!-- Block level elements -->
+        </div>
+        <a class="form" href ="/signup">Sign up instead!</a>
+    </form>
+</section>
+<script src="/js/login.js"></script>
