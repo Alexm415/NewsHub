@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS newsHub_db;
+DROP DATABASE IF EXISTS newshub_db;
 
-CREATE DATABASE newsHub_db;
+CREATE DATABASE newshub_db;

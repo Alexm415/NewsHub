@@ -1,0 +1,20 @@
+<div class = "container">
+  <h1 class = "text-center">Welcome to NewsHub</h1>
+  <p class = "text-center">Your one destination for the latest headlines</p>
+
+  <div id = "news-container">
+    {{#each articles as |article|}}
+
+    <div class = "card">
+            <img src = "{{article.urlToImage}}" class = "card-img-top" >
+            <div class = "card-body">
+              <h5 class = "card-title">{{article.title}}</h5>
+              <p class = "card-text">{{article.description}}</p>
+              <a href = "{{article.url}}" class = "btn btn-primary" target = "_blank"> Read More</a>
+            </div>
+          </div>;
+  </div>
+  {{/each}}
+</div>
+
+<script src="/js/fetchNews.js"></script>
