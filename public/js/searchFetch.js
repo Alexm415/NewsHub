@@ -1,7 +1,10 @@
-let apiKey = "7e298be2b074469685f446919ba4226b";
-let apiLink = `https://newsapi.org/v2/everything?q=Apple&sortBy=popularity&apiKey=${apiKey}`;
-
-const search = document.getElementById("search");
-search.addEventListener("submit", async (e) => {
+const search = document.getElementById("btnsearch");
+console.log(search);
+search.addEventListener("click", async (e) => {
   e.preventDefault();
+  console.log("click");
+  const searchData = {
+    search: document.getElementById("search").value,
+  };
+  window.location.href = `/search/${searchData.search}`;
 });
