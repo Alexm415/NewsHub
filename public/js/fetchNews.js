@@ -1,6 +1,4 @@
-
-
-let apiLink = `https://newsapi.org/v2/everything?q=tesla&from=2024-10-20&sortBy=publishedAt&apiKey=7e298be2b074469685f446919ba4226b`
+/*let apiLink = `https://newsapi.org/v2/everything?q=tesla&from=2024-10-20&sortBy=publishedAt&apiKey=7e298be2b074469685f446919ba4226b`
 
 async function fetchNews() {
   fetch(apiLink)
@@ -58,4 +56,4 @@ async function fetchNews() {
 
   
 
-document.addEventListener('DOMContentLoaded', fetchNews);
+document.addEventListener('DOMContentLoaded', fetchNews); */
