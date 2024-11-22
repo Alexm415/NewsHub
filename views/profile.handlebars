@@ -1,5 +1,20 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+<main>
+
+  <div class="row">
+    <div class="col-auto">
+      <h2>Welcome, {{username}}!</h2>
+      <h3>These are your top rated picks!</h3>
+      <section>
+        <div class="card">
+          <img src="{{articleimg}}" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">{{articletitle}}</h5>
+            <p class="card-text">{{articledescription}}</p>
+            <a href="{{articleurl}}" class="btn btn-primary" target="_blank">
+              Read More</a>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
-</div>
+</main>
