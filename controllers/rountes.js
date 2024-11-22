@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/users.js");
-const User = require("../models/users.js");
 // const axios = require("axios");
 let apiLink = `https://newsapi.org/v2/everything?q=tesla&from=2024-11-11&sortBy=publishedAt&apiKey=7e298be2b074469685f446919ba4226b`
 
