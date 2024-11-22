@@ -1,23 +1,26 @@
-const form = document.getElementById('signupForm');
-form.addEventListener('submit', async (e) => {
+const form = document.getElementById("signupForm");
+console.log(form);
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  console.log("click");
   const formData = {
-    userName: document.getElementById('username').value,
-    email: document.getElementById('email').value,
-    password: document.getElementById('password').value,
-  }
-  console.log('form data:', formData);
-  const response = await fetch('/signup', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    username: document.getElementById("username").value,
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value,
+  };
+  console.log("form data:", formData);
+
+  const response = await fetch("/signup", {
+    method: "POST",
     body: JSON.stringify(formData),
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
   const data = await response.json();
   if (data.success) {
-    console.log('success');
-    window.location.href = '/';
+    console.log("success");
+    window.location.href = "/";
   } else {
     alert(data.message);
   }

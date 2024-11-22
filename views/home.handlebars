@@ -12,8 +12,18 @@
               <p class = "card-text">{{article.description}}</p>
               <a href = "{{article.url}}" class = "btn btn-primary" target = "_blank"> Read More</a>
             </div>
-          </div>;
+          </div> <div class="rating-box">
+    <header>How was this article?</header>
+    <div value="{{@index}}" class="stars">
+      <i value="{{@index}}" class="fa-solid fa-star"></i>
+      <i value="{{@index}}" class="fa-solid fa-star"></i>
+      <i value="{{@index}}" class="fa-solid fa-star"></i>
+      <i value="{{@index}}" class="fa-solid fa-star"></i>
+      <i value="{{@index}}" class="fa-solid fa-star"></i>
+    </div>
   </div>
+  </div>
+  
   {{/each}}
 </div>
 

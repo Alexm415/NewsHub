@@ -1,20 +1,17 @@
 const express = require("express");
-const router = express.Router();
-const User = require("../models/users.js");
+const router = require("express").Router();
+const { User, Rating } = require("../models");
 // const axios = require("axios");
-let apiLink = `https://newsapi.org/v2/everything?q=tesla&from=2024-11-11&sortBy=publishedAt&apiKey=7e298be2b074469685f446919ba4226b`
-
+//let apiLink = `https://newsapi.org/v2/everything?q=tesla&from=2024-11-21&sortBy=publishedAt&apiKey=7e298be2b074469685f446919ba4226b`;
 
 router.get("/", (req, res) => {
   const loggedin = req.session.logged_in;
-
-  fetch(apiLink)
+  const apiurl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=7e298be2b074469685f446919ba4226b`;
+  fetch(apiurl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-
       res.render("home", {
         articles: data.articles,
         title: "NewsHub",
@@ -32,11 +29,10 @@ router.get("/search/:searchData", (req, res) => {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-
       res.render("home", {
         articles: data.articles,
         title: "NewsHub",
+        cssfile: "stars.css",
         loggedin: loggedin,
       });
     });
@@ -66,10 +62,7 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  res.render("newshubSignup", {
-    title: "Signup",
-    cssfile: "newshubSignup.css",
-  });
+  res.render("newshubSignup");
 });
 
 router.get("/logout", (req, res) => {
@@ -80,6 +73,27 @@ router.get("/logout", (req, res) => {
   } else {
     res.status(404).end();
   }
+});
+router.post("/api/rating/save", async (req, res) => {
+  try {
+    console.log(req.body);
+    const newRating = await Rating.create({
+      articletitle: req.body,
+      articleimg: req.body,
+      articleurl: req.body,
+      articledecription: req.body,
+      starrating: req.body,
+      user_id: req.session.user_id,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  router.get("/profile", (req, res) => {
+    res.render("profile");
+  });
+});
+router.get("/profile", (req, res) => {
+  res.render("profile");
 });
 
 router.post("/signup", async (req, res) => {
@@ -96,7 +110,7 @@ router.post("/signup", async (req, res) => {
     }
 
     const newUser = await User.create({
-      userName: req.body.userName,
+      username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
@@ -120,7 +134,7 @@ router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({
       where: {
-        userName: req.body.userName,
+        username: req.body.username,
       },
     });
     if (!userData) {
