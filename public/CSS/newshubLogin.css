@@ -1,0 +1,150 @@
+body {
+    background-color: white; /* Set the background color of the body to white */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    margin: 0;
+}
+/*
+header {
+    width: 100%;
+    height: 120px;
+    background-color: black;
+    color: white;
+}
+*/
+.wrapper {
+    background-color: #dffbdf; /* Set the background color of the wrapper to a lighter green */
+    border: 1px solid black;
+    padding: 20px; /* Ensure padding is consistent */
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 5px white; /* Add a narrow white border inside the existing border */
+    width: 50%;
+    height: 90%; 
+    margin: 2px auto;
+    display: block; /* Revert to block display */
+    /* flex-direction: initial; Remove flex-direction */
+    /* justify-content: initial; Remove justify-content */
+    /* align-items: initial; Remove align-items */
+    /* text-align: center; Center the content */
+}
+
+header {
+    font: black;
+    padding: 16px 0;
+    text-align: left;
+}
+
+main {
+    padding: 20px;
+}
+h1 {
+    font: white;
+    font-size: 30px;
+    text-align: left;
+    margin: 0; /* Remove margin to align with the border */
+    padding: 10px; /* Add padding to align with the border */
+    color: white; /* Make the text color white */
+    background-color: black; /* Add black background */
+    width: calc(100% - 40px); /* Adjust width to fit within the border */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.common-list {
+    padding-left: 40px;
+    font-size: 20px;
+    list-style-type: none;
+}
+
+common-heading {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    length: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header h1 {
+    font-size: 24px;
+    color: white;             
+    padding: 10px; /* Revert padding to original size */
+    width: auto; /* Revert width to auto */
+    display: inline-block; /* Ensure the box is only as wide as its content */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    /* align-items: initial; */
+    align-items: left;
+}
+
+#usernameLabel,
+#passwordLabel {
+    margin-top: 20px;
+    margin-right: auto;
+    justify-content: left;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 20px;
+    color: black;
+}
+
+.pUsername {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 18px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    padding: 10px; /* Reduce padding to adjust height */
+    margin-bottom: 10px;
+    width: 95%; /* Revert to 30% width */
+    margin-bottom: 10px; /* Reduce margin to make text boxes closer */
+    margin-top: 20px; /* Reduce margin to make text boxes closer */
+    border: 1px solid black;
+    border-radius: 4px;
+    display: left; /* Ensure the input fields are displayed inline */
+   /*  margin-left: 20px; */  /* Set margin for the input fields */
+   /*  padding-left: 20px; */  /* Provide 20px distance between the border and text */
+}
+
+form input[type="submit"] {
+    padding: 18px;
+  /*  width: 95%; */ /* Match the width of the username and password input fields */
+    height: 80px; /* Add height to the buttons */
+    background-color: black; /* Change button background to black */
+    color: white; /* Change button text to white */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px; /* Set margin for the buttons */
+    margin-bottom: 20px;
+  /*  margin-left: 20px; */  /* Set margin for the buttons to align with input fields */
+}
+
+#submitBtn[type="submit"]:hover {
+    background-color: black; 
+    /* Darken the button background on hover */
+}
+
+.new-post-btn {
+    position: fixed;
+    bottom: 20px; /* Position 20px from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to center */
+    padding: 10px 20px;
+    background-color: black; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
