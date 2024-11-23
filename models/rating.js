@@ -26,7 +26,7 @@ Rating.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    articledecription: {
+    articledescription: {
       type: DataTypes.STRING,
       allowNull: false,
     },

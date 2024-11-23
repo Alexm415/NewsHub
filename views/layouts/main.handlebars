@@ -19,6 +19,7 @@
     <title>{{title}}</title>
   </head>
   
+  <body>
     <div class="wrapper"> 
      <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -31,28 +32,43 @@
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           
           <li class="nav-item">
-            <li class="home-link "><a class="nav-link active" aria-current="page" href="/">Home</a></li>
-                    {{#if loggedin}}
-                    <li class="logout-link"><a href="/logout">Log out</a></li>
-                    {{else}}
-                    <li class="signup-link"><a href="/signup">Sign up</a></li>
-                    <li class="login-link"><a href="/login">Log in</a></li>
-                    {{/if}}
-                
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+            {{#if loggedin}}
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Log out</a>
+          </li>
+            {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Log in</a>
+          </li>
+            {{/if}}
+        
         </ul>
+
         <div class="d-flex" role="search">
           <input class="form-control me-2" type="search" id="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" id="btnsearch" type="submit">Search</button>
         </div>
       </div>
     </div>
-    </div>
   </nav>
   </header>
-  <body>
-    {{{body}}}
 
+  <main class="container">
+     {{{body}}}
+
+  </main>
+  </div>
+
+    <script src="/js/searchFetch.js"></script>
   </body>
-  <script src="/js/searchFetch.js"></script>
+  
 </html>
 
