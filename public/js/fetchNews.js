@@ -68,12 +68,12 @@ stars.forEach((star, index1) => {
     console.log(e.target);
     const article = e.target.parentNode.parentNode.parentNode;
     const articleImage = article.querySelector("img").src;
-    const articleTtile = article.querySelector("h5").textContent;
+    const articleTitle = article.querySelector("h5").textContent;
     const articleUrl = article.querySelector("a").href;
-    const articleDecription = article.querySelector("p").textContent;
-    console.log(articleTtile);
+    const articleDescription = article.querySelector("p").textContent;
+    console.log(articleTitle);
     console.log(articleUrl);
-    console.log(articleDecription);
+    console.log(articleDescription);
     /// cehcking they work
 
     // fetch request to a api endpoint
@@ -81,16 +81,16 @@ stars.forEach((star, index1) => {
       method: "POST",
       body: JSON.stringify({
         starrating: starRating,
-        articletitle: articleTtile,
+        articletitle: articleTitle,
         articleimg: articleImage,
         articleurl: articleUrl,
-        articledecription: articleDecription,
+        articledescription: articleDescription,
       }),
       headers: {
         "Content-Type": "application/json",
       },
     })
-      .then((responce) => responce.json())
+      .then((response) => response.json())
       .then((data) => {
         console.log(data);
       });
