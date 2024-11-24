@@ -62,7 +62,7 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  res.render("newshubSignup");
+  res.render("newshubSignup", {title: "Signup",cssfile: "newshubSignup.css" });
 });
 
 router.get("/logout", (req, res) => {

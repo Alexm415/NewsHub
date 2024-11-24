@@ -1,38 +1,28 @@
-<main class="form-signin">
-  <section class="card" id="login-form-section">
-    <h1 class="h3 mb-3 fw-normal">Sign up</h1>
-    <!-- Form: Block level elements , a parent-->
-    <form class="pUsername" id="signupForm">
-      <div>
-        <label id="usernameLabel" for="floatingInput">Username</label>
-        <!-- div: Inline level elements -->
-        <input type="text" id="username" name="username" required />
-      </div>
+<form>
+  <div class="card">
+    <h1><strong>Newshub</strong></h1>
+    <h2>Sign up to your NewsHub account</h2>
+    <div class="form-group">
 
-      <div class="pEmailLabel">
-        <label id="emailLabel" for="floatingInput">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="name@exaple.com"
-        />
-      </div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="signupBtn">
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+     <div class="terms">
+      <h6>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a></h6>
+    </div>
 
-      <div class="pPasswordLabel">
-        <label id="passwordLabel" for="password">Password</label>
-        <input type="password" id="password" name="password" required />
-      </div>
-      <div class="login-button">
-        <button
-          id="submitBtn"
-          class="btn btn-primary w-100 py-2"
-          type="submit"
-        >Sign up</button>
-        <!-- Block level elements -->
-      </div>
-      <a class="form" href="/login">Log in instead!</a>
-    </form>
-  </section>
-</main>
+  </div>
+</form>
+
 <script src="/js/signup.js"></script>

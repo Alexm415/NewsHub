@@ -1,19 +1,24 @@
-
-<section class="card" id="login-form-section">
-    <h2 class="common-heading">Log In</h2>
-    <form class="pUsername" id="loginForm">  <!-- Form: Block level elements , a parent-->
-        <div class="usernameLabel">
-            <label id="usernameLabel" for="username">Username:</label> <!-- div: Inline level elements -->
+<form id="form" class="login-form">
+    <div class="card">
+        <h1><strong>Newshub</strong></h1>
+        <h2>Log in</h2>
+        <div class="form-group">
+            <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
         </div>
-        <div class="pPasswordLabel">
-            <label id="passwordLabel" for="password">Password:</label>
+        <div class="form-group">
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <div class="login-button">  
-            <button id="submitBtn" class="login-button-submit" type="submit">Log In</button> <!-- Block level elements -->
+        <div class="needh">
+            <span><a href="#">Need help?</a></span>
         </div>
-        <a class="form" href ="/signup">Sign up instead!</a>
-    </form>
-</section>
-<script src="/js/login.js"></script>
+        <div class="login-button-submit">
+            <button type="submit" id="submit" class="login-button-submit">Log in</button>
+        </div>
+        <div class="reset">
+            <span><a href="https://www.oag.ca.gov/privacy/ccpa">By creating an account or login in, you agree and read California Consumer Privacy Act</a></span>
+        </div>
+    </div>
+</form>
+<script src=" /js/login.js"></script>
