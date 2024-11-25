@@ -1,4 +1,4 @@
-const form = document.getElementById("loginForm");
+const form = document.querySelector("form");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const formData = {
@@ -14,9 +14,10 @@ form.addEventListener("submit", async (e) => {
     body: JSON.stringify(formData),
   });
   const data = await response.json();
+  console.log("response data:", data); 
   if (data.success) {
-    window.location.href = "/";
+    window.location.href = "/profile";
   } else {
-    alert(data.message);
+    alert(data.message || "An error occurred");
   }
 });

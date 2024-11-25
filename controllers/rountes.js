@@ -63,7 +63,7 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  res.render("newshubSignup");
+  res.render("newshubSignup", {title: "Signup",cssfile: "newshubSignup.css" });
 });
 
 router.get("/logout", (req, res) => {
@@ -142,7 +142,6 @@ router.get("/profile", async (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
-  console.log("sigup", req.body);
   try {
     const userData = await User.findOne({
       where: {
@@ -208,4 +207,3 @@ router.post("/login", async (req, res) => {
 });
 
 module.exports = router;
-/// everytime you are logg in to the same account

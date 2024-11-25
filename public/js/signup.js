@@ -1,8 +1,9 @@
-const form = document.getElementById("signupForm");
+const form = document.querySelector("form");
 console.log(form);
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   console.log("click");
+  console.log(document.getElementById("username"));
   const formData = {
     username: document.getElementById("username").value,
     email: document.getElementById("email").value,
@@ -25,3 +26,4 @@ form.addEventListener("submit", async (e) => {
     alert(data.message);
   }
 });
+
