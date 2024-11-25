@@ -79,37 +79,6 @@ router.get("/logout", (req, res) => {
   }
 });
 
-router.get("/profile", (req, res) => {
-  if (!req.session.logged_in) {
-    return res.redirect("/login");
-  }
-  User.findByPk(req.session.user_id, {
-    include: [
-      {
-        model: Rating,
-        order: [["starrating", "DESC"]],
-        limit: 5,
-      },
-    ],
-  })
-    .then((userData) => {
-      if (!userData) {
-        return res.redirect("/login");
-      }
-
-      res.render("profile", {
-        title: "Profile Page",
-        user: userData,
-        loggedin: req.session.logged_in,
-        ratings: userData.Ratings,
-      });
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).json(err);
-    });
-});
-
 router.post("/api/rating/save", async (req, res) => {
   try {
     console.log(req.body);
