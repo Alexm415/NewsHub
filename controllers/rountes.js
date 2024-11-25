@@ -1,6 +1,7 @@
 const express = require("express");
 const router = require("express").Router();
 const { User, Rating } = require("../models");
+const { filter } = require("lodash");
 // const axios = require("axios");
 //let apiLink = `https://newsapi.org/v2/everything?q=tesla&from=2024-11-21&sortBy=publishedAt&apiKey=7e298be2b074469685f446919ba4226b`;
 
@@ -111,15 +112,33 @@ router.post("/api/rating/save", async (req, res) => {
       articletitle: req.body.articletitle,
       articleimg: req.body.articleimg,
       articleurl: req.body.articleurl,
+
       articledecription: req.body.articledescription,
       starrating: req.body.starrating,
       user_id: req.session.user_id,
     });
     res.status(200).json(newRating)
+
   } catch (error) {
     console.log(error);
     res.status(500).json({message: "Error saving rating"});
   }
+
+});
+router.get("/profile", async (req, res) => {
+  const loggedin = req.session.logged_in;
+  const userName = req.session.username;
+  const dataRating = await Rating.findAll({
+    where: { user_id: req.session.user_id },
+  });
+  console.log(dataRating);
+  const cleanData = dataRating.map((d) => d.get({ plain: true }));
+  res.render("profile", {
+    dataRating: cleanData,
+    loggedin: loggedin,
+    userName: userName,
+  });
+
 });
 
 router.post("/signup", async (req, res) => {
@@ -174,6 +193,7 @@ router.post("/login", async (req, res) => {
     }
     req.session.save(() => {
       req.session.user_id = userData.id;
+      req.session.username = userData.username;
       req.session.logged_in = true;
       res.json({
         user: userData,
@@ -188,3 +208,4 @@ router.post("/login", async (req, res) => {
 });
 
 module.exports = router;
+/// everytime you are logg in to the same account
