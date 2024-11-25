@@ -80,24 +80,29 @@ router.get("/logout", (req, res) => {
 });
 
 router.post("/api/rating/save", async (req, res) => {
-  try {
-    console.log(req.body);
-    const newRating = await Rating.create({
-      articletitle: req.body.articletitle,
-      articleimg: req.body.articleimg,
-      articleurl: req.body.articleurl,
+  if (!req.body)
+    try {
+      console.log(req.body);
+      const newRating = await Rating.create({
+        articletitle: req.body.articletitle,
+        articleimg: req.body.articleimg,
+        articleurl: req.body.articleurl,
 
-      articledescription: req.body.articledescription,
-      starrating: req.body.starrating,
-      user_id: req.session.user_id,
-    });
-    res.status(200).json(newRating);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: "Error saving rating" });
-  }
+        articledescription: req.body.articledescription,
+        starrating: req.body.starrating,
+        user_id: req.session.user_id,
+      });
+      res.status(200).json(newRating);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "Error saving rating" });
+    }
 });
+
 router.get("/profile", async (req, res) => {
+  if (!req.session.logged_in) {
+    return res.redirect("/login");
+  }
   const loggedin = req.session.logged_in;
   const userName = req.session.username;
   const dataRating = await Rating.findAll({
