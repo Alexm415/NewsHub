@@ -1,28 +1,34 @@
-<form>
-  <div class="card">
-    <h1><strong>Newshub</strong></h1>
-    <h2>Sign up to your NewsHub account</h2>
-    <div class="form-group">
+<form id="signup-form" class="mx-auto my-5" style="max-width: 400px;">
+  <div class="card shadow">
+    <div class="card-body">
+      <h1 class="text-center mb-4"><strong>NewsHub</strong></h1>
+      <h2 class="text-center mb-4">Sign up to your Newshub account</h2>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" id="username" name="username" class="form-control" required>
+      </div>
 
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="text" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <div class="signupBtn">
-      <button type="submit" class="signupbtn">Sign Up</button>
-    </div>
-     <div class="terms">
-      <h6>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a></h6>
-    </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="text" id="email" name="email" class="form-control" required>
+      </div>
 
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="text" id="password" name="password" class="form-control" required>
+      </div>
+
+      <div class="d-grid mb-3">
+        <button type="submit" class="btn btn-success">Sign Up</button>
+      </div>
+
+      <div class="text-center">
+        <small>
+          By creating an account, you agree to our 
+          <a href="#" class="text-decoration-none" style="color: dodgerblue;">Terms & Privacy</a>
+        </small>
+      </div>
+    </div>
   </div>
 </form>
-
 <script src="/js/signup.js"></script>

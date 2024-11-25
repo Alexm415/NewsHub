@@ -1,24 +1,34 @@
-<form id="form" class="login-form">
-    <div class="card">
-        <h1><strong>Newshub</strong></h1>
-        <h2>Log in</h2>
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div class="needh">
-            <span><a href="#">Need help?</a></span>
-        </div>
-        <div class="login-button-submit">
-            <button type="submit" id="submit" class="login-button-submit">Log in</button>
-        </div>
-        <div class="reset">
-            <span><a href="https://www.oag.ca.gov/privacy/ccpa">By creating an account or login in, you agree and read California Consumer Privacy Act</a></span>
-        </div>
-    </div>
+<form id="form" class="login-form mx-auto my-5" style="max-width: 400px;">
+  <div class="card shadow">
+    <div class="card-body">
+      <h1 class="text-center mb-4"><strong>NewsHub</strong></h1>
+      <h2 class="text-center mb-4">Log in</h2>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" id="username" name="username" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" required>
+      </div>
+
+      <div class="text-end mb-3">
+        <a href="#" class="text-decoration-none">Need help?</a>
+      </div>
+
+      <div class="d-grid mb-3">
+        <button type="submit" id="submit" class="btn btn-primary">Log in</button>
+      </div>
+
+      <div class="text-center">
+        <small>
+          <a href="https://www.oag.ca.gov/privacy/ccpa" class="text-decoration-none">
+            By creating an account or logging in, you agree to and read the California Consumer Privacy Act
+          </a>
+        </small>
+      </div>
+    </div>  
+  </div>
 </form>
 <script src=" /js/login.js"></script>
