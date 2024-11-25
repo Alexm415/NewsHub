@@ -63,7 +63,10 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  res.render("newshubSignup", {title: "Signup",cssfile: "newshubSignup.css" });
+  res.render("newshubSignup", {
+    title: "Signup",
+    cssfile: "newshubSignup.css",
+  });
 });
 
 router.get("/logout", (req, res) => {
@@ -76,35 +79,6 @@ router.get("/logout", (req, res) => {
   }
 });
 
-  router.get("/profile", (req, res) => {
-    if (!req.session.logged_in) {
-      return res.redirect("/login");
-    }
-    User.findByPk(req.session.user_id, {
-      include: [
-        {
-          model: Rating, 
-          order: [["starrating", "DESC"]],
-          limit: 5,
-        },
-      ],
-    }).then((userData) => {
-      if (!userData) {
-        return res.redirect("/login");
-      }
-
-    res.render("profile", {
-      title: "Profile Page",
-      user: userData,
-      loggedin: req.session.logged_in,
-      ratings: userData.Ratings,
-    });
-  }).catch((err) => {
-    console.error(err);
-    res.status(500).json(err);
-  });
-});
-
 router.post("/api/rating/save", async (req, res) => {
   try {
     console.log(req.body);
@@ -113,17 +87,15 @@ router.post("/api/rating/save", async (req, res) => {
       articleimg: req.body.articleimg,
       articleurl: req.body.articleurl,
 
-      articledecription: req.body.articledescription,
+      articledescription: req.body.articledescription,
       starrating: req.body.starrating,
       user_id: req.session.user_id,
     });
-    res.status(200).json(newRating)
-
+    res.status(200).json(newRating);
   } catch (error) {
     console.log(error);
-    res.status(500).json({message: "Error saving rating"});
+    res.status(500).json({ message: "Error saving rating" });
   }
-
 });
 router.get("/profile", async (req, res) => {
   const loggedin = req.session.logged_in;
@@ -138,7 +110,6 @@ router.get("/profile", async (req, res) => {
     loggedin: loggedin,
     userName: userName,
   });
-
 });
 
 router.post("/signup", async (req, res) => {
