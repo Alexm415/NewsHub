@@ -21,7 +21,7 @@ form.addEventListener("submit", async (e) => {
   const data = await response.json();
   if (data.success) {
     console.log("success");
-    window.location.href = "/profile";
+    window.location.href = "/";
   } else {
     alert(data.message);
   }
